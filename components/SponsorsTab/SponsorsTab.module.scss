@@ -1,0 +1,27 @@
+@import "assets/styles/breakpoints.scss";
+@import "assets/styles/colors.scss";
+.afdq-sponsorstab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  overflow:hidden;
+  .header {
+    font-family: "Raleway Light";
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    font-size: 12px;
+  }
+
+  .sponsors-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    .item {
+      // height: 100px;
+      width: 100px;
+      margin: 0 5px;
+    }
+  }
+}

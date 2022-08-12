@@ -1,0 +1,92 @@
+@import "assets/styles/breakpoints.scss";
+@import "assets/styles/colors.scss";
+.afdq-topbar-container {
+  background: url("/afdq/bgbanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  padding: 10px 0;
+  overflow: hidden;
+  @include for-tablet-portrait-up {
+    padding: 20px 0;
+  }
+
+  .image-placeholder {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    height: 110px;
+    opacity: 0.7;
+    @include for-tablet-landscape-up {
+      right: 30px;
+      height: 120px;
+      opacity: 1;
+    }
+  }
+  .announcement-container {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+
+    .text-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+
+      .header {
+        white-space: nowrap;
+        font-family: "Raleway Light";
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        display: inline;
+        background: linear-gradient(
+          #8f6a2e,
+          #c19c60,
+          #ffda9e,
+          #c19c60,
+          #8f6a2e
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: scale(0.9, 1);
+
+        @include for-tablet-portrait-up {
+          font-size: 3.5rem;
+          line-height: 3rem;
+        }
+
+        span {
+          white-space: nowrap;
+          vertical-align: middle;
+          display: inline;
+          font-family: "Julietta Messie";
+          font-size: 0.8rem;
+          line-height: 0.8rem;
+
+          @include for-tablet-portrait-up {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      .sub-header {
+        font-family: "GG Light";
+        font-size: 12px;
+        @include for-tablet-portrait-up {
+          font-size: 1rem;
+        }
+        span {
+          font-family: "GG Semi Bold";
+        }
+      }
+    }
+  }
+}

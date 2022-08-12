@@ -1,0 +1,40 @@
+@import "assets/styles/breakpoints.scss";
+
+  .afdq-tab {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 50px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    p {
+      font-family: "GG light";
+      font-size: 1.5rem;
+    }
+
+    strong {
+      margin-top: 15px;
+      font-size: 1.75rem;
+    }
+
+    & > .header {
+      align-self: center;
+      font-family: "Raleway Light";
+      background: linear-gradient(#8f6a2e, #c19c60, #ffda9e, #c19c60, #8f6a2e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      transform: scale(0.9, 1);
+      margin-top: 50px;
+      @include for-narrow-screen {
+        font-size: 1.8rem;
+      }
+
+      @include for-tablet-portrait-up {
+        font-size: 3rem;
+      }
+    }
+  }

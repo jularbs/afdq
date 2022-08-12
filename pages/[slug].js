@@ -1,17 +1,15 @@
-import SponsorsTabTest from "components/SponsorsTab/SponsorsTabTest";
-import CandidatesTab from "components/CandidatesTab/CadidatesTab";
 import AfdqLayout from "layouts/AfdqLayout";
-import TopBanner from "components/TopBanner/TopBanner";
-import AboutTab from "components/AboutTab/AboutTab";
-
-import { getEntries } from "actions/afdq";
+import CandidateOverview from "components/CandidateOverview/CandidateOverview";
+import { getDetails, getEntries } from "actions/afdq";
+import axios from "axios";
 import Head from "next/head";
-const afdq = ({ entries }) => {
+
+const afdq = ({ data, details, candidates }) => {
   return (
     <>
       <Head>
-        <title>Aliwan Fiesta Digital Queen 2021</title>
-        <meta name="canonical" href={`https://dzrh.com.ph/afdq`} />
+        <title>{`${data.name} | Aliwan Fiesta Digital Queen 2021`}</title>
+        <meta name="canonical" href={`https://dzrh.com.ph/afdq/${data.slug}`} />
 
         <meta
           name="description"
@@ -22,7 +20,7 @@ const afdq = ({ entries }) => {
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content={`Aliwan Fiesta Digital Queen 2021`}
+          content={`${data.name} | Aliwan Fiesta Digital Queen 2021`}
         />
         <meta
           property="og:description"
@@ -32,12 +30,15 @@ const afdq = ({ entries }) => {
           property="og:image"
           content={`${process.env.CLIENT_URL}/afdq/newlinkpreview.jpeg`}
         />
-        <meta property="og:link" content={`${process.env.CLIENT_URL}/afdq`} />
+        <meta
+          property="og:link"
+          content={`${process.env.CLIENT_URL}/afdq/${data.slug}`}
+        />
 
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
-          content={`Aliwan Fiesta Digital Queen 2021`}
+          content={`${data.name} | Aliwan Fiesta Digital Queen 2021`}
         />
         <meta
           name="twitter:description"
@@ -47,30 +48,39 @@ const afdq = ({ entries }) => {
           name="twitter:image"
           content={`${process.env.CLIENT_URL}/afdq/newlinkpreview.jpeg`}
         />
-        <meta name="twitter:url" content={`${process.env.CLIENT_URL}/afdq`} />
+        <meta
+          name="twitter:url"
+          content={`${process.env.CLIENT_URL}/afdq/${data.slug}`}
+        />
 
         <meta name="twitter:site" content="@dzrhnews" />
         <meta name="twitter:creator" content="@dzrhnews" />
       </Head>
       <AfdqLayout>
-        <TopBanner />
-        <SponsorsTabTest />
-        {/* <SponsorsTab /> */}
-        <CandidatesTab dataEntries={entries} />
-        <AboutTab />
-        <div style={{ height: "60px" }} />
+        <CandidateOverview
+          data={data}
+          details={details}
+          candidates={candidates}
+        />
       </AfdqLayout>
     </>
   );
 };
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await getEntries();
-  const entries = res;
+export async function getServerSideProps({ params }) {
+  const { slug } = params;
 
-  // Pass data to the page via props
-  return { props: { entries } };
+  const res = await axios.get(`${process.env.MBC_API}/poll-option/${slug}`);
+  const data = await res.data;
+
+  const res2 = await getDetails();
+  const details = await res2;
+
+  const res3 = await getEntries();
+  const candidates = await res3;
+  return {
+    props: { data, details, candidates },
+  };
 }
 
 export default afdq;

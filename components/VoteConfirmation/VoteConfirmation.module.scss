@@ -1,0 +1,73 @@
+@import "assets/styles/colors.scss";
+.modal-window.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  & > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+  }
+
+  .modal-confirmation {
+    background-color: $msffbgdark !important;
+    border-radius: 15px;
+    .title {
+      color: $msffyellow;
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+      margin: 0 auto;
+      padding-bottom: 10px;
+    }
+    .sub-header {
+      color: white;
+      font-size: 0.8rem;
+      text-align: center;
+      font-weight: 300;
+      margin: 0 auto;
+      padding-bottom: 10px;
+    }
+
+    .confirmation-form {
+      label {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: white;
+        font-weight: 800;
+      }
+
+      .cancel-button {
+        font-size: 0.8rem;
+        color: #1cb7eb;
+      }
+
+      .primary-button {
+        color: black;
+        text-transform: uppercase;
+        font-weight: 800;
+        background-color: $msffyellow;
+        border-color: $msffyellow;
+      }
+    }
+  }
+}

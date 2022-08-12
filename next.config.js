@@ -17,10 +17,22 @@ const nextConfig = {
     const defaultArr = ["'self'"];
     const fontArr = ["'self'"];
     const styleArr = ["'self'", "'unsafe-inline'"];
-    const scriptArr = ["'self'", "'unsafe-eval'"];
-    const connectArr = ["'self'"];
-    const imgArr = ["'self'", "data:"];
-    const frameArr = ["'self'"];
+    const scriptArr = [
+      "'self'",
+      "'unsafe-eval'",
+      "recaptcha.net",
+      "www.gstatic.com",
+      "www.youtube.com",
+      "connect.facebook.net",
+      "www.facebook.com",
+    ];
+    const connectArr = ["'self'", "jularbs.com:8080"];
+    const imgArr = [
+      "'self'",
+      "data:",
+      "mbc-one.s3.ap-southeast-1.amazonaws.com",
+    ];
+    const frameArr = ["'self'", "www.youtube.com", "https://recaptcha.net/"];
     const frameAncestorsArr = ["'self'"];
     const mediaArr = ["'self'"];
     const objectArr = ["'self'"];

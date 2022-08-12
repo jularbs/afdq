@@ -1,0 +1,189 @@
+@import "assets/styles/breakpoints.scss";
+@import "assets/styles/colors.scss";
+
+
+.candidateoverview-container {
+  // padding: 0 50px;
+  padding-bottom: 50px;
+
+  @include for-phone-only {
+    padding: 0 0px;
+  }
+
+  .candidate-details-container {
+    padding: 10px 20px;
+    @include for-phone-only {
+      padding: 0 15px;
+    }
+    .name {
+      font-family: "Raleway Medium";
+      font-size: 2rem;
+      color: #e0bb7f;
+    }
+
+    .region,
+    .city,
+    .charity {
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      font-family: "GG Light";
+    }
+
+    .region::before {
+      content: "Region: ";
+      font-family: "GG Semi Bold";
+    }
+
+    .city::before {
+      content: "Town/City/Province: ";
+      font-family: "GG Semi Bold";
+    }
+
+    .charity::before {
+      content: "Advocacy/Charitable Program: ";
+      font-family: "GG Semi Bold";
+    }
+
+    hr {
+      background-color: #e0bb7f;
+    }
+
+    .description {
+      font-family: "Raleway Medium";
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .vote-button {
+      font-family: "Raleway light";
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      span {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        background-color: $afdqpink;
+        color: white;
+        padding: 5px 30px;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .other-candidates {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .gold-bar {
+      margin-bottom: 15px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .hr {
+        position: absolute;
+        z-index: 0;
+        height: 1px;
+        width: 95vw;
+        max-width: 900px;
+        background-color: #e0bb7f;
+      }
+      .header {
+        font-family: "Raleway Medium";
+        position: relative;
+        z-index: 2;
+        padding: 0;
+        background: linear-gradient(
+          to right,
+          #8f6a2e,
+          #c19c60,
+          #e0bb7f,
+          #f3ce92,
+          #ffda9e,
+          #f3ce92,
+          #e0bb7f,
+          #c19c60,
+          #8f6a2e
+        );
+        color: $afdqviolet;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        font-size: 1rem;
+        min-width: 300px;
+        align-items: center;
+
+        @include for-tablet-portrait-up {
+          font-size: 1.5rem;
+          min-width: 400px;
+        }
+        .star {
+          position: absolute;
+
+          &::after {
+            font-size: 25px;
+
+            content: "\2726";
+          }
+        }
+
+        .left {
+          left: 15px;
+        }
+
+        .right {
+          right: 15px;
+        }
+      }
+    }
+
+    .other-candidates-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .candidate-item {
+        padding: 0 5px 10px 5px;
+        .image {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top center;
+          position: relative;
+          width: 250px;
+          height: 350px;
+          background-color: black;
+
+          @include for-phone-only {
+            width: 100px;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+
+  .top-nav {
+    background-color: $afdqviolet;
+    .back-button {
+      &::after {
+        content: "back";
+        margin-left: 5px;
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-family: "GG Semi Bold";
+      }
+    }
+
+    .socmed-buttons {
+      font-family: "GG Light";
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}

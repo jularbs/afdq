@@ -24,3 +24,22 @@ a {
     background: black;
   }
 }
+
+.alert-card {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  color: white;
+  font-size: 0.8rem;
+  padding: 10px;
+
+  &.error {
+    background-color: red;
+  }
+
+  &.success {
+    background-color: green;
+  }
+}
