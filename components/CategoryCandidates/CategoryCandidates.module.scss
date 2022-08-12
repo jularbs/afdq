@@ -9,67 +9,7 @@
   align-items: center;
   overflow: hidden;
 
-  .gold-bar {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .hr {
-      position: absolute;
-      z-index: 0;
-      height: 1px;
-      width: 95vw;
-      max-width: 900px;
-      background-color: #e0bb7f;
-    }
-    .header {
-      font-family: "Raleway Medium";
-      position: relative;
-      min-width: 300px;
-      z-index: 2;
-      padding: 0;
-      background: linear-gradient(
-        to right,
-        #8f6a2e,
-        #c19c60,
-        #e0bb7f,
-        #f3ce92,
-        #ffda9e,
-        #f3ce92,
-        #e0bb7f,
-        #c19c60,
-        #8f6a2e
-      );
-      color: $afdqviolet;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: center;
-      border-radius: 15px;
-      font-size: 1.2rem;
-      align-items: center;
-
-      .star {
-        position: absolute;
-
-        &::after {
-          font-size: 25px;
-
-          content: "\2726";
-        }
-      }
-
-      .left {
-        left: 15px;
-      }
-
-      .right {
-        right: 15px;
-      }
-    }
-  }
-
   .candidates-row {
-    margin-top: 15px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -80,8 +20,7 @@
       margin-bottom: 10px;
       min-width: 45%;
       max-width: 45%;
-
-      color: white;
+      color: black;
 
       @include for-tablet-portrait-up {
         min-width: 200px;
@@ -94,6 +33,8 @@
         position: relative;
         width: 100%;
         height: 260px;
+      border: 3px $afdqgold solid;
+
         background-color: $afdqpurple;
         background-size: cover;
         background-position: top;
@@ -107,13 +48,19 @@
           position: absolute;
           bottom: 10px;
           padding: 0px 30px;
-          background-color: $afdqpink;
+          background-color: $afdqviolet;
           border-radius: 10px;
           color: white;
           text-transform: uppercase;
-          font-weight: 600;
+          font-weight: 900;
           font-size: 1.2rem;
           cursor: pointer;
+
+          &:hover{
+          background-color: $afdqyellow;
+          color: $afdqviolet;
+
+          }
         }
       }
 

@@ -24,15 +24,6 @@ const CategoryCandidates = ({ title, candidates }) => {
   };
   return (
     <div className={styles["category-candidates"]}>
-      <div className={styles["gold-bar"]}>
-        <div className={styles["hr"]}></div>
-        <div className={styles["header"]}>
-          {title}
-          <div className={`${styles["star"]} ${styles["left"]}`}></div>
-          <div className={`${styles["star"]} ${styles["right"]}`}></div>
-        </div>
-      </div>
-
       <div className={styles["candidates-row"]}>{showCandidates()}</div>
     </div>
   );

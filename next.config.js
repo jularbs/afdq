@@ -1,7 +1,7 @@
 const path = require("path");
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   poweredByHeader: false,
   env: {
     CLIENT_URL: `${process.env.CLIENT_URL}`,
@@ -26,7 +26,11 @@ const nextConfig = {
       "connect.facebook.net",
       "www.facebook.com",
     ];
-    const connectArr = ["'self'", "jularbs.com:8080"];
+    const connectArr = [
+      "'self'",
+      "jularbs.com:8080",
+      "mbc-one.s3.amazonaws.com",
+    ];
     const imgArr = [
       "'self'",
       "data:",
