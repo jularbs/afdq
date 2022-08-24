@@ -17,7 +17,9 @@ const Navigation = () => {
         </div>
       </Link>
 
-      <div className={`${styles["main-nav"]} ${isActive ? "active" : ""}`}>
+      <div
+        className={`${styles["main-nav"]} ${isActive ? styles["active"] : ""}`}
+      >
         <div
           className={styles["back-nav"]}
           onClick={() => {

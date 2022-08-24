@@ -48,8 +48,6 @@ const AfdqLayout = ({ children }) => {
         />
       </Head>
       <div className={styles["afdq-main-container"]}>
-        <img src="/afdq/weave-min.png" className={styles["weave"]} alt="" />
-
         <div className={styles["children"]}>
           <SSOmenu />
           <Navigation />

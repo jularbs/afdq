@@ -9,15 +9,7 @@ import { shuffle } from "assets/utilities/commonFunctions";
 
 import { isAuth } from "/actions/auth";
 import VoteConfirmation from "../VoteConfirmation/VoteConfirmation";
-import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
-
-import {
-  FacebookIcon,
-  TwitterIcon,
-  FacebookShareButton,
-  TwitterShareButton,
-} from "react-share";
 
 import LoginForm from "components/LoginForm/LoginForm";
 
@@ -30,26 +22,31 @@ const CandidateOverview = ({ data, details, candidates }) => {
   });
 
   const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [otherCandidates, setOtherCandidates] = useState([]);
 
+  useEffect(() => {
+    setOtherCandidates(
+      shuffle(candidates).filter((candidate) => candidate.slug !== data.slug)
+    );
+  }, [candidates]);
   const showOtherCandidates = () => {
-    return shuffle(candidates)
-      .filter((candidate) => candidate.slug !== data.slug)
-      .map((candidate, index) => {
-        return (
-          <Link href={`/${candidate.slug}`} key={index} passHref>
-            <a>
-              <div className={styles["candidate-item"]}>
-                <div
-                  className={styles["image"]}
-                  style={{
-                    backgroundImage: `url("${candidate.image.location}")`,
-                  }}
-                ></div>
-              </div>
-            </a>
-          </Link>
-        );
-      });
+    return otherCandidates.map((candidate, index) => {
+      return (
+        <Link href={`/${candidate.slug}`} key={index} passHref>
+          <div className={styles["candidate-item"]}>
+            <div
+              className={styles["image"]}
+              style={{
+                backgroundImage: `url("${candidate.image.location}")`,
+              }}
+            ></div>
+
+            <div className={styles["name"]}>{candidate.name}</div>
+            <div className={styles["city"]}>{candidate.meta.city}</div>
+          </div>
+        </Link>
+      );
+    });
   };
 
   const voteButtonHandler = () => {
@@ -81,7 +78,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
               setConfirmationOpen(true);
             }}
           >
-            <span>Vote for this candidate</span>
+            <span>Vote</span>
           </button>
         );
       } else {
@@ -109,42 +106,10 @@ const CandidateOverview = ({ data, details, candidates }) => {
           toggle={confirmationOpen}
           setToggle={setConfirmationOpen}
         />
-        <div
-          className={`${styles["top-nav"]} d-flex justify-content-between align-items-center p-2 px-lg-3`}
-        >
-          <div
-            className={`${styles["back-button"]} d-flex align-items-center`}
-            onClick={() => router.back()}
-          >
-            <IoArrowBack />
-          </div>
-          <div
-            className={`${styles["socmed-buttons"]} d-flex align-items-center`}
-          >
-            <div className={`${styles["label"]} mr-2`}>share</div>
-            <div className={`${styles["item"]} mr-1`}>
-              <TwitterShareButton
-                url={`${process.env.CLIENT_URL}/${data.slug}`}
-              >
-                <TwitterIcon size={30} round={true} />
-              </TwitterShareButton>
-            </div>
-            <div className={styles["item"]}>
-              <FacebookShareButton
-                url={`${process.env.CLIENT_URL}/${data.slug}`}
-              >
-                <FacebookIcon size={30} round={true} />
-              </FacebookShareButton>
-            </div>
-          </div>
-        </div>
         <div className="row no-gutters">
-          <div className="col-lg-6 col-sm-12">
-            <div className={`p-md-3`}>
-              <div
-                className="embed-responsive"
-                style={{ aspectRatio: "16 / 9" }}
-              >
+          <div className="col-lg-6 col-sm-12 align-items-center">
+            <div className={`p-md-5`}>
+              <div className={styles['media-container']}>
                 <ReactPlayer
                   controls={true}
                   className={styles["react-player"]}
@@ -172,14 +137,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
         <div className="row no-gutters">
           <div className="col-lg-12">
             <div className={styles["other-candidates"]}>
-              <div className={styles["gold-bar"]}>
-                <div className={styles["hr"]}></div>
-                <div className={styles["header"]}>
-                  Meet all the finalists
-                  <div className={`${styles["star"]} ${styles["left"]}`}></div>
-                  <div className={`${styles["star"]} ${styles["right"]}`}></div>
-                </div>
-              </div>
+              <div className={styles["header"]}>Meet all the candidates!</div>
               <div className={styles["other-candidates-row"]}>
                 {showOtherCandidates()}
               </div>
