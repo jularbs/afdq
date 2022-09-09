@@ -9,43 +9,6 @@ const AfdqLayout = ({ children }) => {
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="/afdq/fonts/RALEWAY-REGULAR.TTF"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/afdq/fonts/RALEWAY-LIGHT.TTF"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/afdq/fonts/RALEWAY-MEDIUM.TTF"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/afdq/fonts/JuliettaMessie.otf"
-          as="font"
-          crossOrigin=""
-        />
-
-        <link
-          rel="preload"
-          href="/afdq/fonts/GALANOGROTESQUESEMIBOLD.otf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/afdq/fonts/GALANOGROTESQUELIGHT.otf"
-          as="font"
-          crossOrigin=""
-        />
       </Head>
       <div className={styles["afdq-main-container"]}>
         <div className={styles["children"]}>
