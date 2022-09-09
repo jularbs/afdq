@@ -1,11 +1,13 @@
 import styles from "./RegistrationForm.module.scss";
 
 import useDisableBodyScroll from "hooks/useDisableScroll";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { signup } from "actions/auth";
-import Reaptcha from "reaptcha";
 
-import { IoLogoFacebook, IoLogoGoogle } from "react-icons/io5";
+import dynamic from "next/dynamic";
+const Reaptcha = dynamic(() => import("reaptcha"), { ssr: true });
+
+import { IoLogoFacebook } from "react-icons/io5";
 
 //fbsdk
 import { login } from "helpers/oauth/facebooksdk";
@@ -154,34 +156,6 @@ const RegistrationForm = ({ toggle, setToggle }) => {
   const handleCaptchaVerify = (e) => {
     setValidation({ ...validation, captcha: true });
   };
-
-  const initGoogleApi = () => {
-    window.gapi.load("auth2", function () {
-      let auth2 = window.gapi.auth2.init({
-        client_id:
-          "922426045937-956d51q924vtbqocoresvbcietbdk70r.apps.googleusercontent.com",
-        cookiepolicy: "single_host_origin",
-      });
-
-      auth2.attachClickHandler(
-        document.getElementById("customGbtn"),
-        {},
-        function (googleUser) {
-          setRegistrationForm({
-            ...registrationForm,
-            firstName: googleUser.getBasicProfile().getGivenName(),
-            lastName: googleUser.getBasicProfile().getFamilyName(),
-            email: googleUser.getBasicProfile().getEmail(),
-          });
-        },
-        function (error) {}
-      );
-    });
-  };
-
-  useEffect(() => {
-    // initGoogleApi();
-  }, []);
 
   useDisableBodyScroll(toggle);
 

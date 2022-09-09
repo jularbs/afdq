@@ -1,7 +1,7 @@
 const path = require("path");
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   poweredByHeader: false,
   env: {
     CLIENT_URL: `${process.env.CLIENT_URL}`,
@@ -15,8 +15,8 @@ const nextConfig = {
   },
   headers: () => {
     const defaultArr = ["'self'"];
-    const fontArr = ["'self'"];
-    const styleArr = ["'self'", "'unsafe-inline'"];
+    const fontArr = ["'self'", "fonts.gstatic.com"];
+    const styleArr = ["'self'", "'unsafe-inline'", "fonts.googleapis.com"];
     const scriptArr = [
       "'self'",
       "'unsafe-eval'",
@@ -26,7 +26,14 @@ const nextConfig = {
       "connect.facebook.net",
       "www.facebook.com",
     ];
-    const connectArr = ["'self'", "jularbs.com:8080"];
+    const connectArr = [
+      "'self'",
+      "ws:",
+      "jularbs.com:3000",
+      "jularbs.com:8080",
+      "mbc-one.s3.amazonaws.com",
+      "www.facebook.com",
+    ];
     const imgArr = [
       "'self'",
       "data:",

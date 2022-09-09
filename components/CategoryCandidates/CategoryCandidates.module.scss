@@ -4,122 +4,67 @@
 .category-candidates {
   margin-bottom: 30px;
   width: 100%;
+  max-width: 1000px;
+  padding: 1rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 
-  .gold-bar {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .hr {
-      position: absolute;
-      z-index: 0;
-      height: 1px;
-      width: 95vw;
-      max-width: 900px;
-      background-color: #e0bb7f;
-    }
-    .header {
-      font-family: "Raleway Medium";
-      position: relative;
-      min-width: 300px;
-      z-index: 2;
-      padding: 0;
-      background: linear-gradient(
-        to right,
-        #8f6a2e,
-        #c19c60,
-        #e0bb7f,
-        #f3ce92,
-        #ffda9e,
-        #f3ce92,
-        #e0bb7f,
-        #c19c60,
-        #8f6a2e
-      );
-      color: $afdqviolet;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: center;
-      border-radius: 15px;
-      font-size: 1.2rem;
-      align-items: center;
-
-      .star {
-        position: absolute;
-
-        &::after {
-          font-size: 25px;
-
-          content: "\2726";
-        }
-      }
-
-      .left {
-        left: 15px;
-      }
-
-      .right {
-        right: 15px;
-      }
-    }
-  }
-
   .candidates-row {
-    margin-top: 15px;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 
+    @include for-tablet-portrait-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include for-tablet-landscape-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
     .candidate-item {
-      margin: 0 7px;
-      margin-bottom: 10px;
-      min-width: 45%;
-      max-width: 45%;
-
-      color: white;
-
-      @include for-tablet-portrait-up {
-        min-width: 200px;
-        max-width: 200px;
-      }
+      position: relative;
+      color: black;
 
       .image {
         display: flex;
         justify-content: center;
         position: relative;
         width: 100%;
-        height: 260px;
+        padding-bottom: 150%;
+        border: 4px $afdqgold solid;
+
         background-color: $afdqpurple;
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
 
-        @include for-tablet-portrait-up {
-          height: 300px;
-        }
         .button {
-          font-family: "Raleway Regular";
+          font-family: "Montserrat";
           position: absolute;
           bottom: 10px;
           padding: 0px 30px;
-          background-color: $afdqpink;
+          background-color: $afdqviolet;
           border-radius: 10px;
           color: white;
           text-transform: uppercase;
           font-weight: 600;
           font-size: 1.2rem;
           cursor: pointer;
+
+          &:hover {
+            background-color: $afdqyellow;
+            color: $afdqviolet;
+          }
         }
       }
 
       .name {
         word-wrap: break-word;
-        font-family: "GG Semi Bold";
+        font-family: "Montserrat";
         margin-top: 5px;
         font-weight: 600;
         font-size: 1.1rem;
@@ -127,7 +72,7 @@
       }
 
       .city {
-        font-family: "GG Light";
+        font-family: "Montserrat";
         font-size: 0.8rem;
         font-weight: 300;
       }

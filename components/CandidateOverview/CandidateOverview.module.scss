@@ -1,7 +1,6 @@
 @import "assets/styles/breakpoints.scss";
 @import "assets/styles/colors.scss";
 
-
 .candidateoverview-container {
   // padding: 0 50px;
   padding-bottom: 50px;
@@ -10,53 +9,72 @@
     padding: 0 0px;
   }
 
+  .media-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+
+    .react-player {
+      position: absolute;
+    }
+  }
+
   .candidate-details-container {
-    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
     @include for-phone-only {
       padding: 0 15px;
     }
     .name {
-      font-family: "Raleway Medium";
-      font-size: 2rem;
-      color: #e0bb7f;
+      color: $afdqgold;
+      font-family: "Montserrat";
+      font-weight: 700;
+      font-size: 3rem;
     }
 
     .region,
     .city,
     .charity {
+      color: $afdqgold;
+      opacity: 0.85;
       font-size: 1.2rem;
       text-transform: capitalize;
-      font-family: "GG Light";
+      font-family: "Montserrat";
     }
 
     .region::before {
       content: "Region: ";
-      font-family: "GG Semi Bold";
+      font-family: "Montserrat";
+      font-weight: 600;
     }
 
     .city::before {
       content: "Town/City/Province: ";
-      font-family: "GG Semi Bold";
+      font-family: "Montserrat";
+      font-weight: 600;
+
     }
 
     .charity::before {
       content: "Advocacy/Charitable Program: ";
-      font-family: "GG Semi Bold";
-    }
+      font-family: "Montserrat";
+      font-weight: 600;
 
-    hr {
-      background-color: #e0bb7f;
     }
 
     .description {
-      font-family: "Raleway Medium";
+      font-family: "Montserrat";
       margin-top: 20px;
       font-size: 1.1rem;
       font-weight: 300;
+      text-align: center;
     }
 
     .vote-button {
-      font-family: "Raleway light";
+      font-family: "Montserrat";
       margin: 20px auto;
       display: flex;
       justify-content: center;
@@ -64,8 +82,8 @@
       cursor: pointer;
       span {
         text-transform: uppercase;
-        font-size: 1.3rem;
-        background-color: $afdqpink;
+        font-size: 1.5rem;
+        background-color: $afdqviolet;
         color: white;
         padding: 5px 30px;
         border-radius: 15px;
@@ -78,91 +96,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
 
-    .gold-bar {
-      margin-bottom: 15px;
+    .header {
       position: relative;
       display: flex;
-      justify-content: center;
       align-items: center;
-      .hr {
-        position: absolute;
-        z-index: 0;
-        height: 1px;
-        width: 95vw;
-        max-width: 900px;
-        background-color: #e0bb7f;
-      }
-      .header {
-        font-family: "Raleway Medium";
+      font-family: "Montserrat";
+      width: 100%;
+    max-width: 1000px;
+
+      padding: 1rem;
+      text-align: center;
+      color: $afdqgold;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 2rem;
+
+      &::before,
+      &::after {
         position: relative;
-        z-index: 2;
-        padding: 0;
-        background: linear-gradient(
-          to right,
-          #8f6a2e,
-          #c19c60,
-          #e0bb7f,
-          #f3ce92,
-          #ffda9e,
-          #f3ce92,
-          #e0bb7f,
-          #c19c60,
-          #8f6a2e
-        );
-        color: $afdqviolet;
-        text-transform: uppercase;
-        display: flex;
-        justify-content: center;
-        border-radius: 15px;
+        margin: 0 10px;
+        content: "";
+        width: 100%;
+        flex-grow: 1;
+        height: 2px;
+        background-color: $afdqgold;
+      }
+
+      @include for-narrow-screen {
         font-size: 1rem;
-        min-width: 300px;
-        align-items: center;
+      }
 
-        @include for-tablet-portrait-up {
-          font-size: 1.5rem;
-          min-width: 400px;
-        }
-        .star {
-          position: absolute;
-
-          &::after {
-            font-size: 25px;
-
-            content: "\2726";
-          }
-        }
-
-        .left {
-          left: 15px;
-        }
-
-        .right {
-          right: 15px;
-        }
+      @include for-tablet-portrait-up {
+        font-size: 2rem;
+        line-height: 2rem;
+        white-space: nowrap;
       }
     }
 
     .other-candidates-row {
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
       .candidate-item {
         padding: 0 5px 10px 5px;
+        width: 50%;
+        max-width: 250px;
         .image {
           background-size: cover;
           background-repeat: no-repeat;
           background-position: top center;
           position: relative;
-          width: 250px;
-          height: 350px;
-          background-color: black;
+          width: 100%;
+          padding-bottom: 150%;
+          border: 4px $afdqgold solid;
+        }
 
-          @include for-phone-only {
-            width: 100px;
-            height: 150px;
-          }
+        .name {
+          color: black;
+          text-decoration: none;
+          word-wrap: break-word;
+          font-family: "Montserrat";
+          margin-top: 5px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          line-height: 1.3rem;
+        }
+
+        .city {
+          color: black;
+          text-decoration: none;
+          font-family: "Montserrat";
+          font-size: 0.8rem;
+          font-weight: 300;
         }
       }
     }

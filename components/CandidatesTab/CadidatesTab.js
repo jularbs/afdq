@@ -18,46 +18,42 @@ const CandidatesTab = ({ dataEntries }) => {
   //   });
   // };
 
-  const filterByRegion = (set, region) => {
-    return {
-      region: region,
-      candidates: set.filter((entry) => entry.meta.region == region),
-    };
-  };
+  // const filterByRegion = (set, region) => {
+  //   return {
+  //     region: region,
+  //     candidates: set.filter((entry) => entry.meta.region == region),
+  //   };
+  // };
 
-  const filterOptions = () => {
-    setCandidates([
-      filterByRegion(dataEntries, LUZON),
-      filterByRegion(dataEntries, VISAYAS),
-      filterByRegion(dataEntries, MINDANAO),
-    ]);
-  };
-
-  // useEffect(() => {
-  //   fetchOptions();
-  // }, []);
+  // const filterOptions = () => {
+  //   setCandidates([
+  //     filterByRegion(dataEntries, LUZON),
+  //     filterByRegion(dataEntries, VISAYAS),
+  //     filterByRegion(dataEntries, MINDANAO),
+  //   ]);
+  // };
 
   // useEffect(() => {
   //   filterOptions();
-  // }, [options]);
-
-  useEffect(() => {
-    filterOptions();
-  }, [dataEntries]);
+  // }, [dataEntries]);
 
   const showCandidates = () => {
-    return shuffle(candidates).map((data, index) => {
-      return (
-        <CategoryCandidates title={data.region} candidates={data.candidates} key={index}/>
-      );
-    });
+    return shuffle([{ region: "ALL", candidates: dataEntries }]).map(
+      (data, index) => {
+        return (
+          <CategoryCandidates
+            title={data.region}
+            candidates={data.candidates}
+            key={index}
+          />
+        );
+      }
+    );
   };
 
   return (
     <div className={styles["afdq-candidatestab"]} id="candidates">
-      <div className="header">
-        top <span>12</span> candidates
-      </div>
+      <div className={styles["header"]}>top 12 candidates</div>
       {showCandidates()}
     </div>
   );

@@ -3,9 +3,17 @@ import styles from "./CategoryCandidates.module.scss";
 import Link from "next/link";
 import { shuffle } from "assets/utilities/commonFunctions";
 
+import { useState, useEffect } from "react";
+
 const CategoryCandidates = ({ title, candidates }) => {
+  const [display, setDisplay] = useState([]);
+
+  useEffect(() => {
+    setDisplay(shuffle(candidates));
+  }, [candidates]);
+
   const showCandidates = () => {
-    return shuffle(candidates).map((candidate, index) => (
+    return display.map((candidate, index) => (
       <Link href={`/${candidate.slug}`} key={index} passHref>
         <div className={styles["candidate-item"]}>
           <div
@@ -24,15 +32,6 @@ const CategoryCandidates = ({ title, candidates }) => {
   };
   return (
     <div className={styles["category-candidates"]}>
-      <div className={styles["gold-bar"]}>
-        <div className={styles["hr"]}></div>
-        <div className={styles["header"]}>
-          {title}
-          <div className={`${styles["star"]} ${styles["left"]}`}></div>
-          <div className={`${styles["star"]} ${styles["right"]}`}></div>
-        </div>
-      </div>
-
       <div className={styles["candidates-row"]}>{showCandidates()}</div>
     </div>
   );

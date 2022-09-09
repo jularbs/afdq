@@ -5,14 +5,14 @@ const TopBanner = () => {
     <div className={styles["afdq-topbar-container"]}>
       <div className={styles["announcement-container"]}>
         <div className={styles["image-placeholder"]}>
-          <img src="/afdq/model.png" alt="" height="100%" width="auto" />
+          <img src="/afdq/model2022.png" alt="" height="100%" width="auto" />
         </div>
         <div className={styles["text-container"]}>
           <div className={styles["header"]}>
-            <span> Vote for the </span> NETIZENS' CHOICE AWARD
+            Vote for the <strong>Netizen's Choice Award</strong>
           </div>
           <div className={styles["sub-header"]}>
-            Voting is from <span>September 11 - October 3, 2021</span>
+            Voting is from September 24 - October 17, 2022
           </div>
         </div>
       </div>
