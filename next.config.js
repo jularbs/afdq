@@ -38,6 +38,7 @@ const nextConfig = {
       "'self'",
       "data:",
       "mbc-one.s3.ap-southeast-1.amazonaws.com",
+      "mbc-one.s3.amazonaws.com",
     ];
     const frameArr = ["'self'", "www.youtube.com", "https://recaptcha.net/"];
     const frameAncestorsArr = ["'self'"];
