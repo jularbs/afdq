@@ -33,6 +33,7 @@ const nextConfig = {
       "jularbs.com:8080",
       "mbc-one.s3.amazonaws.com",
       "www.facebook.com",
+      "mbc-one.dzrh.com.ph",
     ];
     const imgArr = [
       "'self'",
