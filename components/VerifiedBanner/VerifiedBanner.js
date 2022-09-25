@@ -1,10 +1,10 @@
 import styles from "./VerifiedBanner.module.scss";
 
 import useDisableBodyScroll from "hooks/useDisableScroll";
-
+import { useRouter } from "next/router";
 const VerifiedBanner = ({ toggle, setToggle }) => {
   useDisableBodyScroll(toggle);
-
+  const router = useRouter();
   return (
     <div className={`${styles["modal-window"]} ${toggle ? styles.show : ""}`}>
       <div className={styles["modal-login"]}>
@@ -15,6 +15,7 @@ const VerifiedBanner = ({ toggle, setToggle }) => {
           <button
             className={`btn btn-primary btn-block ${styles["login-button"]} mt-3`}
             onClick={() => {
+              router.push("/", undefined, { shallow: true });
               setToggle(false);
             }}
           >
