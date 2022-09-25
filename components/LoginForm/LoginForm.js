@@ -110,7 +110,7 @@ const LoginForm = ({ toggle, setToggle }) => {
             </label>
           </div>
           <div className={styles["links"]}>
-            <Link href="/msff/auth/forgotpassword">
+            <Link href="/auth/forgotpassword">
               <div
                 onClick={() => {
                   setToggle(false);

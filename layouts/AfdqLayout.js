@@ -15,13 +15,12 @@ const AfdqLayout = ({ children }) => {
           <Navigation />
           {children}
         </div>
-
-        <div className={styles["dti-details"]}>
-          DTI Fair Trade Permit No. FTEB-122112 Series of 2021
+        <div className={styles["sticky-bottom"]}>
+          <div className={styles["dti-details"]}>
+            DTI Fair Trade Permit No. FTEB-122112 Series of 2021
+          </div>
+          <div className={styles["footer-strip"]} />
         </div>
-        <div
-          className={styles["footer-strip"]}
-        />
       </div>
     </>
   );

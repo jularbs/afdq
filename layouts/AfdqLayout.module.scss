@@ -7,23 +7,30 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
-  // padding-bottom: 50px;
+  min-height: 100vh;
+  padding-bottom: 50px;
 
-  .dti-details {
-    width: 100vw;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+  .sticky-bottom {
+    position: absolute;
+    bottom: 0;
+    .dti-details {
+      width: 100vw;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .footer-strip {
+      position: relative;
+
+      height: 50px;
+      width: 100vw;
+      background-image: url("/afdq/footer-bg.png");
+      background-size: contain;
+    }
   }
 
-  .footer-strip {
-    position: relative;
-    height: 50px;
-    width: 100vw;
-    background-image: url("/afdq/footer-bg.png");
-    background-size: contain;
-  }
   .children {
     position: relative;
     z-index: 1;
