@@ -34,12 +34,14 @@ const CandidateOverview = ({ data, details, candidates }) => {
       return (
         <Link href={`/${candidate.slug}`} key={index} passHref>
           <div className={styles["candidate-item"]}>
-            <div
-              className={styles["image"]}
-              style={{
-                backgroundImage: `url("${candidate.image.location}")`,
-              }}
-            ></div>
+            <div className={styles["image-card"]}>
+              <div
+                className={styles["image"]}
+                style={{
+                  backgroundImage: `url("${candidate.image.location}")`,
+                }}
+              />
+            </div>
 
             <div className={styles["name"]}>{candidate.name}</div>
             <div className={styles["city"]}>{candidate.meta.city}</div>
@@ -109,7 +111,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
         <div className="row no-gutters">
           <div className="col-lg-6 col-sm-12 align-items-center">
             <div className={`p-md-5`}>
-              <div className={styles['media-container']}>
+              <div className={styles["media-container"]}>
                 <ReactPlayer
                   controls={true}
                   className={styles["react-player"]}

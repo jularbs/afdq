@@ -16,14 +16,16 @@ const CategoryCandidates = ({ title, candidates }) => {
     return display.map((candidate, index) => (
       <Link href={`/${candidate.slug}`} key={index} passHref>
         <div className={styles["candidate-item"]}>
-          <div
-            className={styles["image"]}
-            style={{
-              backgroundImage: `url("${candidate.image.location}")`,
-            }}
-          >
+          <div className={styles["image-card"]}>
+            <div
+              className={styles["image"]}
+              style={{
+                backgroundImage: `url("${candidate.image.location}")`,
+              }}
+            ></div>
             <div className={styles["button"]}>vote</div>
           </div>
+
           <div className={styles["name"]}>{candidate.name}</div>
           <div className={styles["city"]}>{candidate.meta.city}</div>
         </div>
