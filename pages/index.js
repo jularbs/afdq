@@ -58,7 +58,6 @@ const afdq = ({ entries }) => {
         {/* <SponsorsTab /> */}
         <CandidatesTab dataEntries={entries} />
         <AboutTab />
-        <div style={{ height: "60px" }} />
       </AfdqLayout>
     </>
   );

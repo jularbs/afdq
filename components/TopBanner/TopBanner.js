@@ -13,7 +13,14 @@ const TopBanner = () => {
           </div>
           <div className={styles["sub-header"]}>
             Voting is from October 8 to 29, 2022
-          </div>
+          </div>  
+        </div>
+        <div className={styles["sponsor-container"]}>
+          <img
+            src="/afdq/sponsor/dito-rect.png"
+            className={styles["img-wrapper"]}
+            alt=""
+          />
         </div>
       </div>
     </div>

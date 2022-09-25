@@ -6,25 +6,22 @@ const SponsorsTabTest = () => {
       <div className={styles["header"]}>in partnership with</div>
       <div className={styles["sponsor-logo-container"]}>
         <div className={styles["item"]}>
-          <img src="/afdq/adunits/unique.jpg" width="100%" alt="" />
+          <img src="/afdq/sponsor/unique-ad.png" width="100%" alt="" />
         </div>
         <div className={styles["item"]}>
-          <img src="/afdq/adunits/whiterose.jpg" width="100%" alt="" />
+          <img src="/afdq/sponsor/whiterose-ad.png" width="100%" alt="" />
         </div>
         <div className={styles["item"]}>
-          <img src="/afdq/adunits/charm.png" width="100%" alt="" />
+          <img src="/afdq/sponsor/charm-ad.png" width="100%" alt="" />
         </div>
-        <div className={styles["item"]}>
-          <img src="/afdq/adunits/tnt.png" width="100%" alt="" />
+        <div className={`${styles["item"]} ${styles["hz"]}`}>
+          <img src="/afdq/sponsor/birch-ad.png" width="100%" alt="" />
         </div>
-        <div className={styles["item"]}>
-          <img src="/afdq/adunits/palmolive.jpg" width="100%" alt="" />
+        <div className={`${styles["item"]} ${styles["hz"]}`}>
+          <img src="/afdq/sponsor/tanduay-ad.png" width="100%" alt="" />
         </div>
-        <div className={styles["item"]}>
-          <img src="/afdq/adunits/shopeev.png" width="70%" alt="" />
-        </div>
-        <div className={styles["item"]}>
-          <img src="/afdq/adunits/alfonso.png" width="100%" alt="" />
+        <div className={`${styles["item"]} ${styles["hz"]}`}>
+          <img src="/afdq/sponsor/palmo-ad.jpg" width="100%" alt="" />
         </div>
       </div>
     </div>
