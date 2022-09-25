@@ -7,7 +7,7 @@ import { signup } from "actions/auth";
 import dynamic from "next/dynamic";
 const Reaptcha = dynamic(() => import("reaptcha"), { ssr: true });
 
-import { IoLogoFacebook } from "react-icons/io5";
+import { IoLogoFacebook, IoLogoGoogle } from "react-icons/io5";
 
 //fbsdk
 import { login } from "helpers/oauth/facebooksdk";
@@ -234,22 +234,8 @@ const RegistrationForm = ({ toggle, setToggle }) => {
                   <option value="prefer not to answer">
                     Prefer not to answer
                   </option>
-                  <option
-                    value="male"
-                    // selected={`${
-                    //   registrationForm.gender == "male" ? true : ""
-                    // }`}
-                  >
-                    Male
-                  </option>
-                  <option
-                    value="female"
-                    // selected={`${
-                    //   registrationForm.gender == "female" ? true : ""
-                    // }`}
-                  >
-                    Female
-                  </option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
                 <span className={styles["input__label"]}>Gender</span>
               </label>

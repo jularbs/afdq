@@ -52,10 +52,11 @@
         font-family: "Montserrat";
         font-size: 1.5rem;
         line-height: 1.5rem;
+        font-weight: 700;
         display: inline;
         color: $afdqgold;
+        transform: scaleX(0.85);
 
-        // margin-bottom: 5px;
         @include for-tablet-portrait-up {
           font-size: 2.5rem;
           line-height: 2rem;
@@ -74,10 +75,11 @@
       .sub-header {
         font-family: "Montserrat";
         font-size: 12px;
+        font-weight: 600;
         color: $afdqgold;
 
         @include for-tablet-portrait-up {
-          font-size: 1rem;
+          font-size: 18px;
         }
       }
     }

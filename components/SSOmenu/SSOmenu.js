@@ -70,22 +70,11 @@ const SSOmenu = () => {
           <div
             className={styles["back-control"]}
             onClick={() => {
-              Router.push("/");
+              Router.push("https://aliwanfiesta.com");
             }}
           >
             <IoChevronBack className={styles["icon"]} />
-            <div>DZRH Homepage</div>
-          </div>
-          <div className={styles["website-list"]}>
-            {/* MBC MEDIA GROUP <IoChevronDown />
-            <ul className="dropdown">
-              <li>Love Radio</li>
-              <li>Yes FM</li>
-              <li>Easy Rock</li>
-              <li>Radyo Natin</li>
-              <li>Aksyon Radyo</li>
-              <li>MBC Corporate Website</li>
-            </ul> */}
+            <div>Homepage</div>
           </div>
         </div>
         <div className={styles["profile-nav"]}>{profileTab()}</div>
