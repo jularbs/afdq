@@ -6,7 +6,20 @@ import AboutTab from "components/AboutTab/AboutTab";
 
 import { getEntries } from "actions/afdq";
 import Head from "next/head";
+import { useEffect, useState } from "react";
+
+import { useRouter } from "next/router";
+import VerifiedBanner from "components/VerifiedBanner/VerifiedBanner";
 const afdq = ({ entries }) => {
+  const router = useRouter();
+  const [isVerified, setIsVerified] = useState(false);
+
+  useEffect(() => {
+    if (router.query?.verified) {
+      setIsVerified(true);
+    }
+  }, [router]);
+
   return (
     <>
       <Head>
@@ -58,6 +71,7 @@ const afdq = ({ entries }) => {
         {/* <SponsorsTab /> */}
         <CandidatesTab dataEntries={entries} />
         <AboutTab />
+        <VerifiedBanner toggle={isVerified} setToggle={setIsVerified} />
       </AfdqLayout>
     </>
   );
