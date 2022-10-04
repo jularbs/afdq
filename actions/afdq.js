@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AFDQ_SLUG = "aliwan-fiesta-digital-queen-2021";
+const AFDQ_SLUG = "aliwan-fiesta-digital-queen-2022";
 
 export const getDetails = () => {
   return axios({
