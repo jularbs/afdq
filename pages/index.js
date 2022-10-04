@@ -68,7 +68,6 @@ const afdq = ({ entries }) => {
       <AfdqLayout>
         <TopBanner />
         <SponsorsTabTest />
-        {/* <SponsorsTab /> */}
         <CandidatesTab dataEntries={entries} />
         <AboutTab />
         <VerifiedBanner toggle={isVerified} setToggle={setIsVerified} />
