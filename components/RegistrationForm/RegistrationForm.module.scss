@@ -56,7 +56,7 @@
   }
 
   .modal-registration {
-    background-color: $msffbgdark;
+    background-color: $afdqviolet;
     border-radius: 15px;
     overflow: scroll !important;
 
@@ -81,8 +81,8 @@
         color: black;
         text-transform: uppercase;
         font-weight: 800;
-        background-color: $msffyellow;
-        border-color: $msffyellow;
+        background-color: $afdqyellow;
+        border-color: $afdqyellow;
       }
 
       .fb-button {
@@ -120,7 +120,7 @@
           transform: translate(0.25rem, -65%) scale(0.8);
           color: $msffyellow;
           transform-origin: 0 0;
-          background: $msffbgdark;
+          background: $afdqviolet;
           font-weight: bold;
           line-height: 1.2;
 
@@ -132,7 +132,7 @@
           box-sizing: border-box;
           display: block;
           width: 100%;
-          border: 3px solid white;
+          border: 3px solid $afdqyellow;
           padding: 12px 10px;
           color: white;
           background: transparent;
@@ -144,7 +144,7 @@
 }
 
 .modal-close {
-  color: #aaa;
+  color: white;
   line-height: 50px;
   font-size: 80%;
   position: absolute;

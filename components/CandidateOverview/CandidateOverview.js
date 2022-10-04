@@ -29,6 +29,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
       shuffle(candidates).filter((candidate) => candidate.slug !== data.slug)
     );
   }, [candidates]);
+
   const showOtherCandidates = () => {
     return otherCandidates.map((candidate, index) => {
       return (
@@ -58,7 +59,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
     if (currentDateTime.toISOString() < startDate) {
       return (
         <button className={`btn ${styles["vote-button"]}`} disabled>
-          <span>Voting starts at September 11, 2021</span>
+          <span>Voting starts at October 8, 2022</span>
         </button>
       );
     } else if (currentDateTime.toISOString() > endDate) {
@@ -114,6 +115,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
               <div className={styles["media-container"]}>
                 <ReactPlayer
                   controls={true}
+                  playing={true}
                   className={styles["react-player"]}
                   url={data.meta.candidateVideo}
                   width={"100%"}
