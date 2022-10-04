@@ -115,7 +115,7 @@ const CandidateOverview = ({ data, details, candidates }) => {
               <div className={styles["media-container"]}>
                 <ReactPlayer
                   controls={true}
-                  playing={true}
+                  // playing={true}
                   className={styles["react-player"]}
                   url={data.meta.candidateVideo}
                   width={"100%"}

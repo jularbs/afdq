@@ -6,6 +6,7 @@ import Router from "next/router";
 
 import { login, authenticate } from "actions/auth";
 import Link from "next/link";
+import { IoCloseOutline } from "react-icons/io5";
 
 const LoginForm = ({ toggle, setToggle }) => {
   const [loginForm, setLoginForm] = useState({
@@ -74,15 +75,13 @@ const LoginForm = ({ toggle, setToggle }) => {
   return (
     <div className={`${styles["modal-window"]} ${toggle ? styles.show : ""}`}>
       <div className={styles["modal-login"]}>
-        <div
-          title="Close"
+        <IoCloseOutline
           className={styles["modal-close"]}
           onClick={() => {
             setToggle(false);
           }}
-        >
-          Close
-        </div>
+        />
+
         <div className={styles["header"]}>LOGIN</div>
         {onError()}
         {onSuccess()}

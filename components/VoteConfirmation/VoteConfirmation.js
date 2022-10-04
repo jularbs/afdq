@@ -6,6 +6,8 @@ import useDisableBodyScroll from "hooks/useDisableScroll";
 import { voteCandidate } from "actions/afdq";
 import { getCookie } from "actions/auth";
 
+import { IoCloseOutline } from "react-icons/io5";
+
 const VoteConfirmation = ({ data, setData, toggle, setToggle }) => {
   const token = getCookie("sso-token");
 
@@ -54,9 +56,9 @@ const VoteConfirmation = ({ data, setData, toggle, setToggle }) => {
 
   return (
     <div>
-      <div className={`${styles["modal-window"]}${toggle ? styles.show : ""}`}>
+      <div className={`${styles["modal-window"]} ${toggle ? styles.show : ""}`}>
         <div className={styles["modal-confirmation"]}>
-          <div
+          <IoCloseOutline
             title="Close"
             className={styles["modal-close"]}
             onClick={() => {
@@ -69,9 +71,7 @@ const VoteConfirmation = ({ data, setData, toggle, setToggle }) => {
                 loading: false,
               });
             }}
-          >
-            Close
-          </div>
+          />
           {values.success ? (
             <div>
               <div className={`${styles["title"]} mt-3`}>COUNTED!</div>
@@ -121,14 +121,17 @@ const VoteConfirmation = ({ data, setData, toggle, setToggle }) => {
                   />
                   <label className="mb-0" style={{ fontSize: "10px" }}>
                     I have read and accept the{" "}
-                    <a target="_blank" href="/pages/termsandconditions">
+                    <a
+                      target="_blank"
+                      href="https://dzrh.com.ph/pages/termsandconditions"
+                    >
                       terms and conditions
                     </a>
                     .
                   </label>
                 </div>
                 <button
-                  className="btn btn-primary btn-block primary-button mt-3 d-flex justify-content-center align-items-center"
+                  className={`btn btn-primary btn-block mt-3 d-flex justify-content-center align-items-center ${styles["primary-button"]}`}
                   onClick={() => {
                     setValues({
                       error: "",

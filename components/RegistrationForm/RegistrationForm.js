@@ -7,7 +7,7 @@ import { signup } from "actions/auth";
 import dynamic from "next/dynamic";
 const Reaptcha = dynamic(() => import("reaptcha"), { ssr: true });
 
-import { IoLogoFacebook, IoLogoGoogle } from "react-icons/io5";
+import { IoLogoFacebook, IoCloseOutline } from "react-icons/io5";
 
 //fbsdk
 import { login } from "helpers/oauth/facebooksdk";
@@ -166,15 +166,12 @@ const RegistrationForm = ({ toggle, setToggle }) => {
         className={`${styles["modal-window"]} ${toggle ? styles["show"] : ""}`}
       >
         <div className={styles["modal-registration"]}>
-          <div
-            title="Close"
+          <IoCloseOutline
             className={styles["modal-close"]}
             onClick={() => {
               setToggle(false);
             }}
-          >
-            Close
-          </div>
+          />
           <div className={styles["header"]}>REGISTER</div>
           {onError()}
           {onSuccess()}
