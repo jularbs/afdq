@@ -19,7 +19,13 @@ const AfdqLayout = ({ children }) => {
           <div className={styles["dti-details"]}>
             DTI Fair Trade Permit No. FTEB-145113 Series of 2022
           </div>
-          <div className={styles["footer-strip"]} />
+          <div className={styles["footer-strip"]}>
+            <img src="/afdq/footer-bg.png" className={styles["img-wrapper"]} />
+            <img src="/afdq/footer-bg.png" className={styles["img-wrapper"]} />
+            <img src="/afdq/footer-bg.png" className={styles["img-wrapper"]} />
+            <img src="/afdq/footer-bg.png" className={styles["img-wrapper"]} />
+            <img src="/afdq/footer-bg.png" className={styles["img-wrapper"]} />
+          </div>
         </div>
       </div>
     </>

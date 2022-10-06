@@ -111,8 +111,8 @@ const CandidateOverview = ({ data, details, candidates }) => {
         />
         <div className="row no-gutters">
           <div className="col-lg-6 col-sm-12 align-items-center">
-            <div className={`p-md-5`}>
-              <div className={styles["media-container"]}>
+            <div className={styles["media-container"]}>
+              <div className={styles["media-wrapper"]}>
                 <ReactPlayer
                   controls={true}
                   // playing={true}

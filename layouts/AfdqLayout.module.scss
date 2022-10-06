@@ -8,26 +8,37 @@
   background-size: cover;
   color: black;
   min-height: 100vh;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 
   .sticky-bottom {
     position: absolute;
     bottom: 0;
     .dti-details {
+      font-size: .6rem;
       width: 100vw;
       position: relative;
       display: flex;
       justify-content: flex-end;
+      padding: 5px;
+
+      @include for-tablet-portrait-up {
+        font-size: 1rem;
+        line-height: 1;
       padding: 10px;
+
+      }
     }
 
     .footer-strip {
+      display: flex;
       position: relative;
-
       height: 50px;
-      width: 100vw;
-      background-image: url("/afdq/footer-bg.png");
-      background-size: contain;
+      max-width: 100vw;
+      overflow: hidden;
+
+      .img-wrapper {
+        height: 50px;
+      }
     }
   }
 
