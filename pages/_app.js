@@ -1,14 +1,41 @@
-import "assets/styles/globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "assets/styles/globals.scss";
 
 import { initFacebookSdk } from "../helpers/oauth/facebooksdk";
 import { useEffect } from "react";
+
+import { useRouter } from "next/router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+NProgress.configure({ showSpinner: true });
 
 export function MyApp({ Component, pageProps }) {
   useEffect(() => {
     initFacebookSdk();
   }, []);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleStart = (url) => {
+      NProgress.start();
+    };
+
+    const handleStop = () => {
+      NProgress.done();
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleStop);
+    router.events.on("routeChangeError", handleStop);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleStop);
+      router.events.off("routeChangeError", handleStop);
+    };
+  }, [router]);
 
   return (
     <>
