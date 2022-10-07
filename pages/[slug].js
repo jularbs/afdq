@@ -16,7 +16,7 @@ const afdq = ({ data, details, candidates }) => {
 
         <meta
           name="description"
-          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from October 8 to October 29, 2022."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -27,7 +27,7 @@ const afdq = ({ data, details, candidates }) => {
         />
         <meta
           property="og:description"
-          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from October 8 to October 29, 2022."
         />
         <meta
           property="og:image"
@@ -45,7 +45,7 @@ const afdq = ({ data, details, candidates }) => {
         />
         <meta
           name="twitter:description"
-          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from October 8 to October 29, 2022."
         />
         <meta
           name="twitter:image"
