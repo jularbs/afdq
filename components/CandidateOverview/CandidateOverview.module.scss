@@ -38,6 +38,7 @@
     .name {
       color: $afdqgold;
       font-family: "Montserrat";
+      font-style: normal;
       font-weight: 700;
       font-size: 1.5rem;
       line-height: 1.7rem;
@@ -56,28 +57,33 @@
       font-size: 1rem;
       text-transform: capitalize;
       font-family: "Montserrat";
+      font-style: normal;
     }
 
     .region::before {
       content: "Region: ";
       font-family: "Montserrat";
+      font-style: normal;
       font-weight: 600;
     }
 
     .city::before {
       content: "Town/City/Province: ";
       font-family: "Montserrat";
+      font-style: normal;
       font-weight: 600;
     }
 
     .charity::before {
       content: "Advocacy/Charitable Program: ";
       font-family: "Montserrat";
+      font-style: normal;
       font-weight: 600;
     }
 
     .description {
       font-family: "Montserrat";
+      font-style: normal;
       margin-top: 20px;
       font-size: 1rem;
       font-weight: 300;
@@ -86,6 +92,8 @@
 
     .vote-button {
       font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
       margin: 20px auto;
       display: flex;
       justify-content: center;
@@ -117,6 +125,7 @@
       display: flex;
       align-items: center;
       font-family: "Montserrat";
+      font-style: normal;
       width: 100%;
       max-width: 1000px;
 
@@ -192,6 +201,7 @@
           text-decoration: none;
           word-wrap: break-word;
           font-family: "Montserrat";
+          font-style: normal;
           margin-top: 5px;
           font-weight: 600;
           font-size: 1rem;
@@ -207,6 +217,7 @@
           color: black;
           text-decoration: none;
           font-family: "Montserrat";
+          font-style: normal;
           font-size: 0.7rem;
           font-weight: 300;
 
