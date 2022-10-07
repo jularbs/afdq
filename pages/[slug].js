@@ -8,53 +8,53 @@ const afdq = ({ data, details, candidates }) => {
   return (
     <>
       <Head>
-        <title>{`${data.name} | Aliwan Fiesta Digital Queen 2021`}</title>
-        <meta name="canonical" href={`https://dzrh.com.ph/afdq/${data.slug}`} />
+        <title>{`${data.name} | Aliwan Fiesta Digital Queen 2022`}</title>
+        <meta
+          name="canonical"
+          href={`${process.env.CLIENT_URL}/${data.slug}`}
+        />
 
         <meta
           name="description"
-          content="Support your Aliwan Fiesta Digital Queen 2021 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content={`${data.name} | Aliwan Fiesta Digital Queen 2021`}
+          content={`${data.name} | Aliwan Fiesta Digital Queen 2022`}
         />
         <meta
           property="og:description"
-          content="Support your Aliwan Fiesta Digital Queen 2021 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
         />
         <meta
           property="og:image"
-          content={`${process.env.CLIENT_URL}/afdq/newlinkpreview.jpeg`}
+          content={`${process.env.CLIENT_URL}/seothumb.jpeg`}
         />
         <meta
           property="og:link"
-          content={`${process.env.CLIENT_URL}/afdq/${data.slug}`}
+          content={`${process.env.CLIENT_URL}/${data.slug}`}
         />
 
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
-          content={`${data.name} | Aliwan Fiesta Digital Queen 2021`}
+          content={`${data.name} | Aliwan Fiesta Digital Queen 2022¯`}
         />
         <meta
           name="twitter:description"
-          content="Support your Aliwan Fiesta Digital Queen 2021 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
+          content="Support your Aliwan Fiesta Digital Queen 2022 candidate by voting them in the Netizens' Choice Award. Voting is from September 11 to October 3."
         />
         <meta
           name="twitter:image"
-          content={`${process.env.CLIENT_URL}/afdq/newlinkpreview.jpeg`}
+          content={`${process.env.CLIENT_URL}/seothumb.jpeg`}
         />
         <meta
           name="twitter:url"
-          content={`${process.env.CLIENT_URL}/afdq/${data.slug}`}
+          content={`${process.env.CLIENT_URL}/${data.slug}`}
         />
-
-        <meta name="twitter:site" content="@dzrhnews" />
-        <meta name="twitter:creator" content="@dzrhnews" />
       </Head>
       <AfdqLayout>
         <CandidateOverview
