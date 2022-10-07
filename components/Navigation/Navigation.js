@@ -13,7 +13,7 @@ const Navigation = () => {
     <div className={styles["afdq-navigation"]}>
       <Link href="/">
         <div className={styles["logo-container"]}>
-          <img src="/afdq/afdqlogo.png" height="60px" alt="" />
+          <img src="/logo2022.png" height="60px" alt="" />
         </div>
       </Link>
 
