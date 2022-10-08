@@ -9,6 +9,9 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
 import Head from "next/head";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-244850660-1");
 
 NProgress.configure({ showSpinner: true });
 
@@ -25,6 +28,7 @@ export function MyApp({ Component, pageProps }) {
     };
 
     const handleStop = () => {
+      ReactGA.pageview(window.location.pathname + window.location.search);
       NProgress.done();
     };
 

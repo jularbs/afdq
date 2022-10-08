@@ -25,6 +25,7 @@ const nextConfig = {
       "www.youtube.com",
       "connect.facebook.net",
       "www.facebook.com",
+      "www.google-analytics.com"
     ];
     const connectArr = [
       "'self'",
